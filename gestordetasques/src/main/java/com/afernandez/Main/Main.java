@@ -14,7 +14,7 @@ class Main {
         while (true) {
             System.out.print(Constants.MENU_OPTIONS);
             int choice = scanner.nextInt();
-            scanner.nextLine();  // Consume newline
+            scanner.nextLine();
 
             switch (choice) {
                 case 1 -> {
@@ -38,14 +38,14 @@ class Main {
                 case 4 -> {
                     System.out.print(Constants.ENTER_TASK_ID);
                     int taskId = scanner.nextInt();
-                    scanner.nextLine();  // Consume newline
+                    scanner.nextLine();
                     System.out.println(Constants.MARKING_TASK_AS_DONE);
                     manager.markTaskAsDone(taskId);
                 }
                 case 5 -> {
                     System.out.print(Constants.ENTER_TASK_ID);
                     int taskId = scanner.nextInt();
-                    scanner.nextLine();  // Consume newline
+                    scanner.nextLine();
                     System.out.println(Constants.REMOVING_TASK);
                     manager.removeTask(taskId);
                 }
