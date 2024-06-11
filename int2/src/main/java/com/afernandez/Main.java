@@ -39,6 +39,97 @@ public class Main {
         // Creamos los botones
         JButton jButton1 = new JButton("+");
         JButton jButton2 = new JButton("Clear");
+        JButton jButton3 = new JButton("-");
+        JButton jButton4 = new JButton("x");
+        JButton jButton5 = new JButton("/");
+
+        jButton5.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String num1Text = jText1.getText();
+                String num2Text = jText2.getText();
+                // Chequeamos que tienen su valor y tal
+                if (!num1Text.isEmpty() && !num2Text.isEmpty()) {
+                    try {
+                        // Pasamos la mandanga de string a int
+                        int num1 = Integer.parseInt(num1Text);
+                        int num2 = Integer.parseInt(num2Text);
+
+                        // Realizamos la suma
+                        int resultado = num1 / num2;
+
+                        // Printamos el resultado y tal
+                        jText3.setText(Integer.toString(resultado));
+                    } catch (NumberFormatException ex) {
+                        // Si hay un error al convertir los números, lo soltamos
+                        jText3.setText("Error");
+                    }
+                } else {
+                    // Si algún campo está vacío, mostramos un mensaje
+                    jText3.setText("PON NUMEROS");
+                }
+            }
+        });
+
+        jButton4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Recogemos los números de los campos de texto en variables
+                String num1Text = jText1.getText();
+                String num2Text = jText2.getText();
+
+                // Chequeamos que tienen su valor y tal
+                if (!num1Text.isEmpty() && !num2Text.isEmpty()) {
+                    try {
+                        // Pasamos la mandanga de string a int
+                        int num1 = Integer.parseInt(num1Text);
+                        int num2 = Integer.parseInt(num2Text);
+
+                        // Realizamos la suma
+                        int resultado = num1 * num2;
+
+                        // Printamos el resultado y tal
+                        jText3.setText(Integer.toString(resultado));
+                    } catch (NumberFormatException ex) {
+                        // Si hay un error al convertir los números, lo soltamos
+                        jText3.setText("Error");
+                    }
+                } else {
+                    // Si algún campo está vacío, mostramos un mensaje
+                    jText3.setText("PON NUMEROS");
+                }
+            }
+        });
+
+        jButton3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Recogemos los números de los campos de texto en variables
+                String num1Text = jText1.getText();
+                String num2Text = jText2.getText();
+
+                // Chequeamos que tienen su valor y tal
+                if (!num1Text.isEmpty() && !num2Text.isEmpty()) {
+                    try {
+                        // Pasamos la mandanga de string a int
+                        int num1 = Integer.parseInt(num1Text);
+                        int num2 = Integer.parseInt(num2Text);
+
+                        // Realizamos la suma
+                        int resultado = num1 - num2;
+
+                        // Printamos el resultado y tal
+                        jText3.setText(Integer.toString(resultado));
+                    } catch (NumberFormatException ex) {
+                        // Si hay un error al convertir los números, lo soltamos
+                        jText3.setText("Error");
+                    }
+                } else {
+                    // Si algún campo está vacío, mostramos un mensaje
+                    jText3.setText("PON NUMEROS");
+                }
+            }
+        });
 
         // Añadimos un ActionListener al botón de suma
         jButton1.addActionListener(new ActionListener() {
@@ -91,6 +182,10 @@ public class Main {
         jPanel.add(jText3);
         jPanel.add(jButton1);
         jPanel.add(jButton2);
+        jPanel.add(jButton3);
+        jPanel.add(jButton4);
+        jPanel.add(jButton5);
+
 
         // Añadimos el panel al JFrame
         jFrame.add(jPanel);
